@@ -9,6 +9,7 @@ import com.appsauce.mvpappsauce.home.HomePresenterProd
 import com.appsauce.mvpappsauce.main.MainPresenter
 import com.appsauce.mvpappsauce.main.MainPresenterProd
 import com.appsauce.mvpappsauce.main.MainView
+import com.appsauce.mvpappsauce.settings.SettingsPresenterProd
 
 object PresenterModule {
 
@@ -27,8 +28,14 @@ object PresenterModule {
     }
 
     fun home(): HomePresenter {
-        return HomePresenterProd(RemoteModule.remoteService(),
-                NavigationModule.navigationService(),
-                DialogModule.dialogService())
+        return HomePresenterProd(
+            RemoteModule.remoteService(),
+            NavigationModule.navigationService(),
+            DialogModule.dialogService()
+        )
+    }
+
+    fun settings(): SettingsPresenterProd {
+        return SettingsPresenterProd()
     }
 }
