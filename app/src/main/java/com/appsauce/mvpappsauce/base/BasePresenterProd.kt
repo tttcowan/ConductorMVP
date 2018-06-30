@@ -3,7 +3,7 @@ package com.appsauce.mvpappsauce.base
 import com.appsauce.mvpappsauce.dialog.DialogId
 import io.reactivex.disposables.CompositeDisposable
 
-abstract class BasePresenterProd<V : BaseView> : BasePresenter<V> {
+open class BasePresenterProd<V : BaseView> : BasePresenter<V> {
 
     protected val disposable = CompositeDisposable()
 

@@ -5,11 +5,12 @@ import android.view.View
 import android.view.ViewGroup
 import com.appsauce.mvpappsauce.R
 import com.appsauce.mvpappsauce.base.BaseController
+import com.appsauce.mvpappsauce.base.BaseControllerProd
 import com.appsauce.mvpappsauce.extension.toast
 import com.appsauce.mvpappsauce.module.PresenterModule
 import kotlinx.android.synthetic.main.controller_home.view.*
 
-class HomeController : BaseController<HomeView, HomePresenter>(), HomeView {
+class HomeController : HomeView, BaseController<HomeView, HomePresenter> by BaseControllerProd() {
 
     override lateinit var presenter: HomePresenter
 

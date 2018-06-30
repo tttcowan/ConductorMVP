@@ -1,6 +1,7 @@
 package com.appsauce.mvpappsauce.navigation
 
 import com.appsauce.mvpappsauce.base.BaseController
+import com.appsauce.mvpappsauce.base.BaseControllerProd
 import com.appsauce.mvpappsauce.base.BasePresenter
 import com.appsauce.mvpappsauce.base.BaseView
 import com.appsauce.mvpappsauce.home.HomeController
@@ -27,7 +28,7 @@ class NavigationServiceProd(private var router: Router?) : NavigationService {
         router = null
     }
 
-    private fun <V : BaseView, P : BasePresenter<V>> navigate(controller: BaseController<V, P>, fade: Boolean = true, isModal: Boolean = false) {
+    private fun <V : BaseView, P : BasePresenter<V>> navigate(controller: BaseControllerProd<V, P>, fade: Boolean = true, isModal: Boolean = false) {
         //Attempt pop to TAG
         val popped = router?.popToTag(controller.tag()) ?: false
         if (!popped) {
@@ -41,14 +42,14 @@ class NavigationServiceProd(private var router: Router?) : NavigationService {
     }
 
     private fun <V : BaseView, P : BasePresenter<V>> replaceRoot(controller: BaseController<V, P>, fade: Boolean = true) {
-        var transaction = RouterTransaction.with(controller).tag(controller.tag())
+        var transaction = RouterTransaction.with(controller.controller()).tag(controller.tag())
         if (fade) {
             transaction = transaction.popChangeHandler(FadeChangeHandler()).pushChangeHandler(FadeChangeHandler())
         }
         router?.setRoot(transaction)
     }
 
-    private fun <V : BaseView, P : BasePresenter<V>> replaceTop(controller: BaseController<V, P>, fade: Boolean = true) {
+    private fun <V : BaseView, P : BasePresenter<V>> replaceTop(controller: BaseControllerProd<V, P>, fade: Boolean = true) {
         var transaction = RouterTransaction.with(controller).tag(controller.tag())
         if (fade) {
             transaction = transaction.popChangeHandler(FadeChangeHandler()).pushChangeHandler(FadeChangeHandler())

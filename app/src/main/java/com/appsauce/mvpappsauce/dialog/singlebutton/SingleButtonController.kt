@@ -5,13 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.appsauce.mvpappsauce.R
-import com.appsauce.mvpappsauce.base.BaseController
+import com.appsauce.mvpappsauce.base.BaseControllerProd
 import com.appsauce.mvpappsauce.base.BaseView
 import com.appsauce.mvpappsauce.dialog.DialogId
 import com.appsauce.mvpappsauce.module.PresenterModule
 import kotlinx.android.synthetic.main.controller_single_button_dialog.view.*
 
-class SingleButtonController(bundle: Bundle) : BaseController<SingleButtonDialogView, SingleButtonDialogPresenter>(bundle), SingleButtonDialogView {
+class SingleButtonController(bundle: Bundle) : BaseControllerProd<SingleButtonDialogView, SingleButtonDialogPresenter>(bundle), SingleButtonDialogView {
 
     override lateinit var presenter: SingleButtonDialogPresenter
 
