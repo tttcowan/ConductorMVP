@@ -16,7 +16,7 @@ class HomeController : BaseController<HomeView, HomePresenter>(), HomeView {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup): View {
         presenter = PresenterModule.home()
         val view = inflater.inflate(R.layout.controller_home, container, false)
-        view.controller_home_to_settings.setOnClickListener { presenter.toSettings() }
+        view.toSettingsButton.setOnClickListener { presenter.toSettings() }
         return view
     }
 

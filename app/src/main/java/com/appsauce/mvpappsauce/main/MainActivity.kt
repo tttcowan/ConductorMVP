@@ -20,6 +20,12 @@ class MainActivity : AppCompatActivity(), MainView {
         presenter.viewReady()
     }
 
+    override fun onBackPressed() {
+        if (!presenter.backPressed()) {
+            super.onBackPressed()
+        }
+    }
+
     override fun onDestroy() {
         presenter.destroy()
         App.setRouter(null)

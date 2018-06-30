@@ -9,9 +9,9 @@ import io.reactivex.rxkotlin.plusAssign
 import io.reactivex.rxkotlin.subscribeBy
 
 class HomePresenterProd(
-    private val remote: RemoteService,
-    private val navigation: NavigationService,
-    private val dialogServiceProd: DialogService
+        private val remote: RemoteService,
+        private val navigation: NavigationService,
+        private val dialogServiceProd: DialogService
 ) : BasePresenterProd<HomeView>(), HomePresenter {
 
     override fun callReturn() {

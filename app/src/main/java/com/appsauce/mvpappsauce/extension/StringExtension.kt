@@ -8,6 +8,6 @@ fun String.toast() {
     Toast.makeText(App.context(), this, Toast.LENGTH_LONG).show()
 }
 
-fun String.Log(){
-    android.util.Log.d("***",this)
+fun String.Log() {
+    android.util.Log.d("***", this)
 }

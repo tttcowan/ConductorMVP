@@ -13,4 +13,8 @@ class MainPresenterProd(private var view: MainView?,
         view = null
         navigationService.destroy()
     }
+
+    override fun backPressed(): Boolean {
+        return navigationService.handleBack()
+    }
 }
