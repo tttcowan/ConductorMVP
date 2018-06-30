@@ -4,6 +4,7 @@ import com.appsauce.mvpappsauce.base.BaseController
 import com.appsauce.mvpappsauce.base.BasePresenter
 import com.appsauce.mvpappsauce.base.BaseView
 import com.appsauce.mvpappsauce.home.HomeController
+import com.appsauce.mvpappsauce.settings.SettingsController
 import com.bluelinelabs.conductor.Router
 import com.bluelinelabs.conductor.RouterTransaction
 import com.bluelinelabs.conductor.changehandler.FadeChangeHandler
@@ -12,6 +13,10 @@ class NavigationServiceProd(private var router: Router?) : NavigationService {
 
     override fun toHome() {
         replaceRoot(HomeController())
+    }
+
+    override fun toSettings() {
+        navigate(SettingsController())
     }
 
     override fun handleBack(): Boolean {

@@ -7,6 +7,7 @@ import com.appsauce.mvpappsauce.R
 import com.appsauce.mvpappsauce.base.BaseController
 import com.appsauce.mvpappsauce.extension.toast
 import com.appsauce.mvpappsauce.module.PresenterModule
+import kotlinx.android.synthetic.main.controller_home.view.*
 
 class HomeController : BaseController<HomeView, HomePresenter>(), HomeView {
 
@@ -14,7 +15,9 @@ class HomeController : BaseController<HomeView, HomePresenter>(), HomeView {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup): View {
         presenter = PresenterModule.home()
-        return inflater.inflate(R.layout.controller_home, container, false)
+        val view = inflater.inflate(R.layout.controller_home, container, false)
+        view.controller_home_to_settings.setOnClickListener { presenter.toSettings() }
+        return view
     }
 
     override fun callComplete() {

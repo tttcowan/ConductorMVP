@@ -8,12 +8,6 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:text="HOME CONTROLLER" />
+    android:text="SETTINGS CONTROLLER" />
 
-  <Button
-    android:id="@+id/controller_home_to_settings"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="bottom|center_horizontal"
-    android:text="To settings" />
 </FrameLayout>
